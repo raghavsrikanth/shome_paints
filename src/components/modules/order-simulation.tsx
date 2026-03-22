@@ -117,7 +117,7 @@ export function OrderSimulationModule() {
               />
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label className="text-xs uppercase tracking-wider text-muted-foreground">Industry</Label>
                 <Select value={industry} onValueChange={(v) => setIndustry(v as IndustryApplication)}>
@@ -142,7 +142,7 @@ export function OrderSimulationModule() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label className="text-xs uppercase tracking-wider text-muted-foreground">Pigment Family</Label>
                 <Select value={family} onValueChange={(v) => setFamily(v as PigmentFamily)}>
@@ -256,7 +256,7 @@ export function OrderSimulationModule() {
 
           <CardContent className="space-y-6 pt-4 relative z-10">
             {/* KPI grid */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="bg-black/30 rounded-lg p-4 border border-white/5 flex flex-col items-center justify-center text-center group cursor-default transition-all hover:bg-black/50 hover:border-primary/30">
                 <span className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Raw Material Cost</span>
                 <span className="text-3xl font-mono tracking-tighter text-white">

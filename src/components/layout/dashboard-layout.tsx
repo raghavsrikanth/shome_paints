@@ -22,14 +22,24 @@ const NAV_ITEMS = [
 
 export function DashboardLayout({ children, currentModule, onNavigate }: { children: React.ReactNode, currentModule: ModuleType, onNavigate: (module: ModuleType) => void }) {
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <div className="flex h-screen w-full bg-background overflow-hidden text-foreground selection:bg-primary/30">
+      {/* Mobile Sidebar Overlay */}
+      {isMobileMenuOpen && (
+        <div 
+          className="fixed inset-0 z-40 bg-background/80 backdrop-blur-sm md:hidden" 
+          onClick={() => setIsMobileMenuOpen(false)} 
+        />
+      )}
+
       {/* Sidebar */}
       <aside 
         className={cn(
-          "flex flex-col border-r border-border bg-popover/50 backdrop-blur-md transition-all duration-300 ease-in-out z-20",
-          isCollapsed ? "w-[64px]" : "w-[240px]"
+          "fixed md:relative flex flex-col h-full border-r border-border bg-popover/95 backdrop-blur-xl transition-all duration-300 ease-in-out z-50",
+          isCollapsed ? "md:w-[64px] w-[240px]" : "w-[240px]",
+          !isMobileMenuOpen && "max-md:-translate-x-full"
         )}
       >
         <div className="flex h-16 items-center justify-between px-4 border-b border-border">
@@ -52,7 +62,10 @@ export function DashboardLayout({ children, currentModule, onNavigate }: { child
             return (
               <button
                 key={item.id}
-                onClick={() => onNavigate(item.id as ModuleType)}
+                onClick={() => {
+                  onNavigate(item.id as ModuleType);
+                  setIsMobileMenuOpen(false);
+                }}
                 title={isCollapsed ? item.label : undefined}
                 className={cn(
                   "flex items-center w-full gap-3 rounded-md px-3 py-2.5 transition-colors group",
@@ -83,14 +96,20 @@ export function DashboardLayout({ children, currentModule, onNavigate }: { child
       {/* Main Content */}
       <main className="flex-1 flex flex-col min-w-0 overflow-hidden relative">
         {/* Header */}
-        <header className="h-16 flex items-center justify-between px-6 border-b border-border bg-popover/30 backdrop-blur-sm z-10 shrink-0">
-          <div className="flex items-center gap-4">
-            <h1 className="font-mono text-lg font-semibold capitalize tracking-tight">
+        <header className="h-16 flex items-center justify-between px-4 md:px-6 border-b border-border bg-popover/30 backdrop-blur-sm z-30 shrink-0">
+          <div className="flex items-center gap-3 w-[65%] md:w-auto">
+            <button 
+              className="md:hidden p-2 -ml-2 text-muted-foreground hover:text-foreground"
+              onClick={() => setIsMobileMenuOpen(true)}
+            >
+              <Menu className="h-5 w-5" />
+            </button>
+            <h1 className="font-mono text-sm md:text-lg font-semibold capitalize tracking-tight truncate">
               {NAV_ITEMS.find((n) => n.id === currentModule)?.label}
             </h1>
           </div>
           
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 md:gap-4 shrink-0">
             <div className="relative hidden md:flex items-center">
               <Search className="absolute left-2.5 h-4 w-4 text-muted-foreground" />
               <input 
