@@ -3,12 +3,12 @@
 import { useMemo } from "react";
 import { format } from "date-fns";
 import { 
-  Activity, AlertTriangle, ArrowRight, Play, Pause, ChevronRight, BarChart4, TrendingDown, Factory
+  Activity, AlertTriangle, ArrowRight, Play, Pause, TrendingDown, Factory
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Progress } from "@/components/ui/progress";
+
 import { Badge } from "@/components/ui/badge";
 import { MOCK_BATCHES } from "@/lib/mock-data";
 import { PipelineStage } from "@/lib/types";

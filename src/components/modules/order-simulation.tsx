@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useEffect } from "react";
 import { format, addDays } from "date-fns";
-import { Calendar as CalendarIcon, CheckCircle2, AlertCircle, Clock, FileText, ChevronDown, PackageCheck, FlaskConical, Palette } from "lucide-react";
+import { Calendar as CalendarIcon, AlertCircle, FileText, PackageCheck, FlaskConical, Palette } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -15,14 +15,14 @@ import { Calendar } from "@/components/ui/calendar";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { MOCK_SKUS } from "@/lib/mock-data";
-import { IndustryApplication, PigmentFamily, QualityTier } from "@/lib/types";
+import { IndustryApplication, PigmentFamily, QualityTier, PigmentSKU } from "@/lib/types";
 
 const INDUSTRIES: IndustryApplication[] = ["Paints", "Inks", "Print", "Textile", "Seed Colorizing"];
 const FAMILIES: PigmentFamily[] = ["Azo Yellow", "Azo Red", "Phthalocyanine Blue", "Phthalocyanine Green", "Dioxazine Violet", "Carbon Black", "Titanium White", "Iron Oxide", "Others"];
 const TIERS: QualityTier[] = ["Standard", "Premium", "Ultra-Premium"];
 
 // Industry specific base requirements (mock logic)
-const getIndustrySpecs = (industry: IndustryApplication, sku: any) => {
+const getIndustrySpecs = (industry: IndustryApplication, sku: PigmentSKU) => {
   const specs = [
     { parameter: "Transparency", minRequired: industry === 'Inks' ? 75 : 0, maxAllowed: industry === 'Paints' ? 50 : 100 },
     { parameter: "Lightfastness", minRequired: industry === 'Textile' || industry === 'Paints' ? 6 : 4, maxAllowed: 8 },

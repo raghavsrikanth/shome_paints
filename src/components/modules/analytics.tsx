@@ -169,6 +169,7 @@ export function AnalyticsModule() {
                 </Pie>
                 <RechartsTooltip 
                   contentStyle={{ backgroundColor: '#161B25', borderColor: '#2A3447', borderRadius: '8px', fontSize: '12px' }}
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
                   formatter={((val: number) => [`${val}%`, 'Revenue']) as any}
                 />
               </PieChart>

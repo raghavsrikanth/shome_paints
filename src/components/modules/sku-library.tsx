@@ -241,7 +241,7 @@ export function SkuLibraryModule() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-4">
               {filteredSkus.map(sku => {
                 const isLowStock = sku.stockAvailable <= sku.reorderThreshold;
-                const marginPct = ((sku.sellingPrice - sku.baseCost) / sku.sellingPrice) * 100;
+
 
                 return (
                   <Card key={sku.id} className="bg-black/20 border-border/50 hover:border-primary/50 transition-colors cursor-pointer group" onClick={() => openFormulation(sku)}>
@@ -323,7 +323,7 @@ export function SkuLibraryModule() {
                       </div>
                       <Select 
                         value={dcbGrade} 
-                        onValueChange={(v) => setDcbGrade(v as any)}
+                        onValueChange={(v) => setDcbGrade(v as 'Standard' | 'Premium' | 'N/A')}
                         disabled={selectedSku.dcbGrade === 'N/A'}
                       >
                         <SelectTrigger className="bg-black/40 border-border/50 h-9 font-mono text-xs">
@@ -343,7 +343,7 @@ export function SkuLibraryModule() {
                       </div>
                       <Select 
                         value={amxGrade} 
-                        onValueChange={(v) => setAmxGrade(v as any)}
+                        onValueChange={(v) => setAmxGrade(v as 'Standard' | 'Premium' | 'N/A')}
                         disabled={selectedSku.amxGrade === 'N/A'}
                       >
                         <SelectTrigger className="bg-black/40 border-border/50 h-9 font-mono text-xs">
