@@ -10,12 +10,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export type ModuleType = "simulation" | "pipeline" | "sku-library" | "analytics" | "inventory";
 
-interface SidebarProps {
-  currentModule: ModuleType;
-  onNavigate: (module: ModuleType) => void;
-  isCollapsed: boolean;
-  setIsCollapsed: (v: boolean) => void;
-}
+
 
 const NAV_ITEMS = [
   { id: "simulation", label: "Order Simulation", icon: FlaskConical },

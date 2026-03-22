@@ -3,9 +3,9 @@
 import { useState } from "react";
 import { 
   BarChart as RechartsBarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, 
-  Tooltip as RechartsTooltip, ResponsiveContainer, Legend, PieChart, Pie, Cell, ScatterChart, Scatter, ZAxis
+  Tooltip as RechartsTooltip, ResponsiveContainer, Legend, PieChart, Pie, Cell
 } from "recharts";
-import { format, subDays } from "date-fns";
+import { format } from "date-fns";
 import { 
   Calendar as CalendarIcon, Download, Factory, AlertTriangle, TrendingUp, TrendingDown, Clock, ShieldAlert 
 } from "lucide-react";
@@ -37,12 +37,7 @@ const REJECTION_DATA = [
   { sku: 'PW6-RUT', rate: 1.2 }
 ];
 
-// Heatmap Data (Days x Weeks) 7x4
-const HEATMAP_DATA = Array.from({ length: 28 }).map((_, i) => ({
-  day: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'][i % 7],
-  week: `W${Math.floor(i / 7) + 1}`,
-  utilization: Math.floor(Math.random() * 40) + 60 // 60-100%
-}));
+
 
 export function AnalyticsModule() {
   const [dateRange, setDateRange] = useState("30d");
