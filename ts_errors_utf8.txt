@@ -1,0 +1,31 @@
+﻿src/components/modules/analytics.tsx(63,37): error TS2322: Type 'Dispatch<SetStateAction<string>>' is not assignable to type '(value: string | null, eventDetails: SelectRootChangeEventDetails) => void'.
+  Types of parameters 'value' and 'value' are incompatible.
+    Type 'string | null' is not assignable to type 'SetStateAction<string>'.
+      Type 'null' is not assignable to type 'SetStateAction<string>'.
+src/components/modules/analytics.tsx(77,31): error TS2322: Type '{ children: Element; asChild: true; }' is not assignable to type 'IntrinsicAttributes & NativeButtonProps & Omit<WithBaseUIEvent<Omit<DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, "ref"> & { ...; }>, "className" | ... 2 more ... | "defaultChecked"> & { ...; } & { ...; }'.
+  Property 'asChild' does not exist on type 'IntrinsicAttributes & NativeButtonProps & Omit<WithBaseUIEvent<Omit<DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, "ref"> & { ...; }>, "className" | ... 2 more ... | "defaultChecked"> & { ...; } & { ...; }'.
+src/components/modules/analytics.tsx(173,19): error TS2322: Type '(val: number) => [string, string]' is not assignable to type 'Formatter<ValueType, NameType> & ((value: ValueType, name: NameType, item: TooltipPayloadEntry, index: number, payload: TooltipPayload) => ReactNode | [...])'.
+  Type '(val: number) => [string, string]' is not assignable to type 'Formatter<ValueType, NameType>'.
+    Types of parameters 'val' and 'value' are incompatible.
+      Type 'ValueType | undefined' is not assignable to type 'number'.
+        Type 'undefined' is not assignable to type 'number'.
+src/components/modules/analytics.tsx(198,16): error TS2304: Cannot find name 'Badge'.
+src/components/modules/analytics.tsx(198,130): error TS2304: Cannot find name 'Badge'.
+src/components/modules/order-simulation.tsx(100,16): error TS2304: Cannot find name 'FlaskConical'.
+src/components/modules/order-simulation.tsx(159,39): error TS2322: Type 'Dispatch<SetStateAction<string>>' is not assignable to type '(value: string | null, eventDetails: SelectRootChangeEventDetails) => void'.
+  Types of parameters 'value' and 'value' are incompatible.
+    Type 'string | null' is not assignable to type 'SetStateAction<string>'.
+      Type 'null' is not assignable to type 'SetStateAction<string>'.
+src/components/modules/order-simulation.tsx(194,53): error TS7053: Element implicitly has an 'any' type because expression of type '0' can't be used to index type 'number | readonly number[]'.
+  Property '0' does not exist on type 'number | readonly number[]'.
+src/components/modules/order-simulation.tsx(207,33): error TS2322: Type '{ children: Element; asChild: true; }' is not assignable to type 'IntrinsicAttributes & NativeButtonProps & Omit<WithBaseUIEvent<Omit<DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, "ref"> & { ...; }>, "className" | ... 2 more ... | "defaultChecked"> & { ...; } & { ...; }'.
+  Property 'asChild' does not exist on type 'IntrinsicAttributes & NativeButtonProps & Omit<WithBaseUIEvent<Omit<DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, "ref"> & { ...; }>, "className" | ... 2 more ... | "defaultChecked"> & { ...; } & { ...; }'.
+src/components/modules/order-simulation.tsx(309,53): error TS7053: Element implicitly has an 'any' type because expression of type '0' can't be used to index type 'number | readonly number[]'.
+  Property '0' does not exist on type 'number | readonly number[]'.
+src/components/modules/order-simulation.tsx(392,18): error TS2304: Cannot find name 'Palette'.
+src/components/modules/pipeline-tracker.tsx(106,95): error TS2339: Property 'skuCode' does not exist on type 'ProductionBatch'.
+src/components/modules/pipeline-tracker.tsx(169,58): error TS2304: Cannot find name 'Factory'.
+src/components/modules/sku-library.tsx(138,13): error TS2322: Type 'Dispatch<SetStateAction<number[]>>' is not assignable to type '(value: number | readonly number[], eventDetails: SliderRootChangeEventDetails) => void'.
+  Types of parameters 'value' and 'value' are incompatible.
+    Type 'number | readonly number[]' is not assignable to type 'SetStateAction<number[]>'.
+      Type 'number' is not assignable to type 'SetStateAction<number[]>'.

@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root, .dark {
+    /* Background: #0D0F14 */
+    --background: 223 21% 6%;
+    /* Text Primary: #E8EDF5 */
+    --foreground: 220 33% 94%;
+    /* Card: #1C2333 */
+    --card: 223 29% 15%;
+    --card-foreground: 220 33% 94%;
+    /* Surface: #161B25 */
+    --popover: 221 26% 12%;
+    --popover-foreground: 220 33% 94%;
+    /* Primary Accent: #00D4AA */
+    --primary: 168 100% 42%;
+    --primary-foreground: 223 21% 6%;
+    /* Secondary Accent: #F4A623 */
+    --secondary: 38 90% 55%;
+    --secondary-foreground: 223 21% 6%;
+    /* Muted Text / Info : #6B7A99 */
+    --muted: 221 26% 12%;
+    --muted-foreground: 221 22% 51%;
+    --accent: 221 26% 17%;
+    --accent-foreground: 220 33% 94%;
+    /* Danger: #FF4757 */
+    --destructive: 355 100% 64%;
+    --destructive-foreground: 0 0% 100%;
+    /* Success: #2ED573 */
+    --success: 145 68% 51%;
+    --success-foreground: 0 0% 100%;
+    /* Border: #2A3447 */
+    --border: 219 26% 22%;
+    --input: 219 26% 22%;
+    --ring: 168 100% 41%;
+    --radius: 0.5rem;
+
+    /* Recharts charts variables */
+    --chart-1: 168 100% 41%; /* Teal */
+    --chart-2: 38 90% 55%;  /* Amber */
+    --chart-3: 200 100% 50%; /* Blue */
+    --chart-4: 280 65% 60%; /* Purple */
+    --chart-5: 355 100% 64%; /* Red */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+.text-balance {
+  text-wrap: balance;
+}
